@@ -1,4 +1,4 @@
-// import { fileURLToPath, URL } from 'node:url'
+import { fileURLToPath, URL } from 'node:url'
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -42,7 +42,8 @@ export default defineConfig({
       dts: 'src/types/auto-imports.d.ts', // typescript 宣告檔案位置
       vueTemplate: false,
       eslintrc: {
-        enabled: false, // Default `false`
+        // 生成給 elsint 看的檔案
+        enabled: true, // Default `false`
         filepath: './.eslintrc-auto-import.json',
         globalsPropValue: true
       }
@@ -52,5 +53,10 @@ export default defineConfig({
       dts: 'src/types/components.d.ts', // .d.ts生成位置
       resolvers: [ElementPlusResolver()] // 解析規則
     })
-  ]
+  ],
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url))
+    }
+  }
 })

@@ -7,7 +7,8 @@ module.exports = {
     'plugin:vue/vue3-essential',
     'eslint:recommended',
     '@vue/eslint-config-prettier/skip-formatting',
-    '@/types/auto-imports.d.ts'
+    // 非 TS 要改掉 eslintrc
+    './.eslintrc-auto-import.json'
   ],
   overrides: [
     {

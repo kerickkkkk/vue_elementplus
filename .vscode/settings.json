@@ -1,0 +1,13 @@
+{
+    "editor.codeActionsOnSave": {
+        "source.fixAll.stylelint": "explicit",
+        "source.fixAll.eslint": "explicit",
+      },
+      "stylelint.validate": ["css", "scss", "vue"],
+      "eslint.validate": [
+        "javascript",
+        "vue"
+      ],
+      "vue3snippets.enable-compile-vue-file-on-did-save-code": true,
+  
+}
