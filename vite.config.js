@@ -5,6 +5,9 @@ import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
+import Icons from "unplugin-icons/vite";
+import { FileSystemIconLoader } from "unplugin-icons/loaders";
+import IconsResolver from "unplugin-icons/resolver";
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -51,7 +54,17 @@ export default defineConfig({
     Components({
       dirs: ['src/components'], // 指定components位置 預設是'src/components'
       dts: 'src/types/components.d.ts', // .d.ts生成位置
-      resolvers: [ElementPlusResolver()] // 解析規則
+      resolvers: [ElementPlusResolver(),
+        IconsResolver({ customCollections: ["base"] })
+      ], // 解析規則
+      
+    }),
+    Icons({
+      autoInstall: true,
+      compiler: 'vue3',
+      customCollections: {
+       base: FileSystemIconLoader('./src/assets/icons', svg => svg.replace(/fill="[^"]*"/g, 'fill="currentColor"').replace(/width="([^"]*)"|height="([^"]*)"/g, ''))
+      },
     })
   ],
   resolve: {

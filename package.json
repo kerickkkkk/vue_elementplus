@@ -13,11 +13,14 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@vee-validate/yup": "^4.14.6",
     "echarts": "^5.5.1",
     "element-plus": "^2.8.4",
     "pinia": "^2.1.7",
+    "vee-validate": "^4.14.6",
     "vue": "^3.4.29",
-    "vue-router": "^4.3.3"
+    "vue-router": "^4.3.3",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.44.1",
@@ -32,6 +35,7 @@
     "prettier": "^3.2.5",
     "sass": "^1.80.3",
     "unplugin-auto-import": "^0.18.3",
+    "unplugin-icons": "^0.19.3",
     "unplugin-vue-components": "^0.27.4",
     "vite": "^5.3.1",
     "vite-plugin-vue-devtools": "^7.3.1",
