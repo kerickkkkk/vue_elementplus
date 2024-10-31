@@ -38,8 +38,12 @@ const router = createRouter({
       path: '/icon',
       name: 'icon',
       component: () => import('../components/icons/IconView.vue')
-    }
-
+    },
+    {
+      path: '/form-validate',
+      name: 'form-validate',
+      component: () => import('../views/FormView.vue')
+    },
   ],
   linkActiveClass: 'active',
 })

@@ -19,7 +19,7 @@ defineProps({
   style: {
     type: Object,
     default: () => ({
-      width: "240px",
+      width: "100%",
     }),
   },
 });
@@ -55,20 +55,38 @@ const modelValue = defineModel();
 </template>
 
 <style lang="scss">
+$input-color: lighten(lightgray, 10%);
+$input-border-color: darken($input-color, 50%);
+
 // 調整下拉箭頭樣式
 .el-icon {
   &.el-select__caret {
     color: #000;
     font-size: 20px;
+    .mute &#{&} {
+      color: lightgray;
+    }
   }
 }
 
+.el-select {
+  &__wrapper {
+    background-color: $input-color;
+    border: 1px solid $input-border-color;
+    border-radius: 20px;
+
+    &.is-focused {
+      // 處理的看起來都是 box-shadow
+      box-shadow: 0 0 3px $input-border-color;
+    }
+  }
+}
 // customSelect 是自定義的 class
 .customSelect {
-  &.el-select__popper {
-    // display: block !important;
-    border-radius: 20px;
-  }
+  // &.el-select__popper {
+  //   // display: block !important;
+  //   // border-radius: 20px;
+  // }
   .el-select {
     &-dropdown {
       padding: {

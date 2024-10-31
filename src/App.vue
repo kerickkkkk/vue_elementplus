@@ -15,6 +15,10 @@ const routerMap = ref([
     path: "/icon",
     name: "icon",
   },
+  {
+    path: "/form-validate",
+    name: "form-validate",
+  },
 ]);
 // const currentRoute = routerMap.value.find((item) => item.path === currentPath);
 </script>
