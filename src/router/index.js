@@ -18,8 +18,30 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: () => import('../views/LoginView.vue')
+    },
+    {
+      path: '/modal-form',
+      name: 'modal-form',
+      component: () => import('../views/ModalFormView.vue')
+    },
+    {
+      path: '/select',
+      name: 'select',
+      component: () => import('../views/SelectView.vue')
+    },
+    {
+      path: '/bar-chart',
+      name: 'bar-chart',
+      component: () => import('../components/chart/CustomBar.vue')
+    },
+    {
+      path: '/icon',
+      name: 'icon',
+      component: () => import('../components/icons/IconView.vue')
     }
-  ]
+
+  ],
+  linkActiveClass: 'active',
 })
 
 export default router

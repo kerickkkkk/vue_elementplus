@@ -1,9 +1,7 @@
 <script setup>
-import IBaseTest from "~icons/base/test";
 import IBaseLogo from "~icons/base/logo";
 
 const items = {
-  test: IBaseTest,
   logo: IBaseLogo,
 };
 
