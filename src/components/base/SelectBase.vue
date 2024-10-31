@@ -1,6 +1,8 @@
 <!-- CustomSelect.vue -->
 <script setup>
-import { CaretBottom } from "@element-plus/icons-vue";
+// import { CaretBottom } from "@element-plus/icons-vue";
+import LogoIcon from "~icons/base/logo";
+// https://github.com/unplugin/unplugin-icons/issues/72
 
 // 定義 props
 defineProps({
@@ -38,7 +40,7 @@ const modelValue = defineModel();
   <!-- :model-value="modelValue"
       @update:modelValue="handleChange" -->
   <el-select
-    :suffix-icon="CaretBottom"
+    :suffix-icon="LogoIcon"
     v-model="modelValue"
     :placeholder="placeholder"
     :style="{ ...style }"
